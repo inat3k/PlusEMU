@@ -657,6 +657,7 @@
     <Compile Include="HabboHotel\Badges\BadgeDao.cs" />
     <Compile Include="HabboHotel\Badges\Models\BadgeDefinition.cs" />
     <Compile Include="HabboHotel\Badges\BadgeManager.cs" />
+    <Compile Include="HabboHotel\Bots\BotDao.cs" />
     <Compile Include="HabboHotel\Cache\CacheManager.cs" />
     <Compile Include="HabboHotel\Cache\Process\ProcessComponent.cs" />
     <Compile Include="HabboHotel\Cache\Type\UserCache.cs" />
@@ -981,7 +982,7 @@
     <Compile Include="HabboHotel\Quests\QuestType.cs" />
     <Compile Include="HabboHotel\Quests\QuestTypeUtillity.cs" />
     <Compile Include="HabboHotel\Rooms\AI\BotAI.cs" />
-    <Compile Include="HabboHotel\Rooms\AI\Responses\BotResponse.cs" />
+    <Compile Include="HabboHotel\Bots\Models\BotResponse.cs" />
     <Compile Include="HabboHotel\Rooms\AI\Types\GenericBot.cs" />
     <Compile Include="HabboHotel\Rooms\AI\Types\PetBot.cs" />
     <Compile Include="HabboHotel\Rooms\AI\Speech\RandomSpeech.cs" />
