@@ -7,5 +7,7 @@ namespace Plus.Database.Interfaces
     public interface IQuery : IDisposable
     {
         Task<DbDataReader> ExecuteReaderAsync();
+
+        Task<int> ExecuteNonQueryAsync();
     }
 }

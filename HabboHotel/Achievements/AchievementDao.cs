@@ -43,5 +43,16 @@ namespace Plus.HabboHotel.Achievements
 
             return achievements;
         }
+
+        internal async Task ProgressAchievement(int userId, string group, int newLevel, int newProgress)
+        {
+            using (IAsyncDbClient client = ConnectionProvider.GetConnection())
+            {
+                using (IQuery query = client.CreateQuery("REPLACE INTO `user_achievements` VALUES ('@0', @1, '@2', '@3')", userId, group, newLevel, newProgress))
+                {
+                    await query.ExecuteNonQueryAsync();
+                }
+            }
+        }
     }
 }

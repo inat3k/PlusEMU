@@ -16,6 +16,8 @@ namespace Plus.Database
 
         public Task<DbDataReader> ExecuteReaderAsync() => _command.ExecuteReaderAsync();
 
+        public Task<int> ExecuteNonQueryAsync() => _command.ExecuteNonQueryAsync();
+
         public void Dispose()
         {
             _command.Dispose();
