@@ -654,7 +654,8 @@
     <Compile Include="Database\Query.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HabboHotel\Achievements\AchievementDao.cs" />
-    <Compile Include="HabboHotel\Badges\BadgeDefinition.cs" />
+    <Compile Include="HabboHotel\Badges\BadgeDao.cs" />
+    <Compile Include="HabboHotel\Badges\Models\BadgeDefinition.cs" />
     <Compile Include="HabboHotel\Badges\BadgeManager.cs" />
     <Compile Include="HabboHotel\Cache\CacheManager.cs" />
     <Compile Include="HabboHotel\Cache\Process\ProcessComponent.cs" />
