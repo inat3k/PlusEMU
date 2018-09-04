@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using log4net;
 using Plus.HabboHotel.Users;
 using Plus.Core;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 
 namespace Plus.HabboHotel.Cache.Process
 {

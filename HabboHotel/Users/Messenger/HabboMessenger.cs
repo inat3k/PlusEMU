@@ -10,7 +10,7 @@ using Plus.Communication.Packets.Outgoing.Messenger;
 using Plus.Communication.Packets.Outgoing;
 using Plus.Utilities;
 using Plus.Database.Interfaces;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 
 namespace Plus.HabboHotel.Users.Messenger
 {

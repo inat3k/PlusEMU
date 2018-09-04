@@ -29,7 +29,7 @@ namespace Plus.Database
             command.CommandText = query;
             for (int i = 0; i < parameters.Length; i++)
             {
-                command.Parameters.AddWithValue($"{i}", parameters[i]);
+                command.Parameters.AddWithValue($"@{i}", parameters[i]);
             }
 
             return new Query(command);

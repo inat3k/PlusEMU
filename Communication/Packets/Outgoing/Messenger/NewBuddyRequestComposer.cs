@@ -1,4 +1,4 @@
-﻿using Plus.HabboHotel.Cache.Type;
+﻿using Plus.HabboHotel.Cache.Models;
 
 namespace Plus.Communication.Packets.Outgoing.Messenger
 {

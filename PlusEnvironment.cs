@@ -19,7 +19,7 @@ using Plus.Communication.Encryption;
 
 using Plus.Database.Interfaces;
 using Plus.Database;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 using Plus.HabboHotel.Users.UserData;
 using Plus.Communication.Rcon;
 using Plus.Communication.ConnectionManager;
