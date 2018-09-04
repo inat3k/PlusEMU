@@ -87,11 +87,11 @@
       <HintPath>packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MoreLinq, Version=2.10.21623.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
-      <HintPath>packages\morelinq.2.10.0\lib\net40\MoreLinq.dll</HintPath>
+    <Reference Include="MoreLinq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>packages\morelinq.3.0.0\lib\net451\MoreLinq.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.8.0.11\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.12\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
@@ -645,9 +645,15 @@
     <Compile Include="Core\ExceptionLogger.cs" />
     <Compile Include="Core\Settings\SettingsManager.cs" />
     <Compile Include="Database\Adapter\NormalQueryReactor.cs" />
+    <Compile Include="Database\AsyncDatabaseClient.cs" />
+    <Compile Include="Database\ConnectionProvider.cs" />
     <Compile Include="Database\DatabaseConnection.cs" />
     <Compile Include="Database\DatabaseManager.cs" />
+    <Compile Include="Database\Interfaces\IAsyncDbClient.cs" />
+    <Compile Include="Database\Interfaces\IQuery.cs" />
+    <Compile Include="Database\Query.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HabboHotel\Achievements\AchievementDao.cs" />
     <Compile Include="HabboHotel\Badges\BadgeDefinition.cs" />
     <Compile Include="HabboHotel\Badges\BadgeManager.cs" />
     <Compile Include="HabboHotel\Cache\CacheManager.cs" />
@@ -944,12 +950,11 @@
     <Compile Include="Core\ConfigurationData.cs" />
     <Compile Include="Communication\ConnectionManager\ConnectionHandling.cs" />
     <Compile Include="Core\ConsoleCommands.cs" />
-    <Compile Include="HabboHotel\Achievements\Achievement.cs" />
-    <Compile Include="HabboHotel\Achievements\AchievementLevel.cs" />
-    <Compile Include="HabboHotel\Achievements\AchievementLevelFactory.cs" />
+    <Compile Include="HabboHotel\Achievements\Models\Achievement.cs" />
+    <Compile Include="HabboHotel\Achievements\Models\AchievementLevel.cs" />
     <Compile Include="HabboHotel\Achievements\AchievementManager.cs" />
     <Compile Include="HabboHotel\Catalog\Pets\PetRaceManager.cs" />
-    <Compile Include="HabboHotel\Achievements\UserAchievement.cs" />
+    <Compile Include="HabboHotel\Achievements\Models\UserAchievement.cs" />
     <Compile Include="HabboHotel\Catalog\CatalogManager.cs" />
     <Compile Include="HabboHotel\Catalog\CatalogItem.cs" />
     <Compile Include="HabboHotel\Catalog\CatalogPage.cs" />

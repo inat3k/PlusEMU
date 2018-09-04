@@ -9,6 +9,7 @@ using Plus.Communication.Packets.Outgoing.Inventory.Achievements;
 
 using Plus.Database.Interfaces;
 using log4net;
+using Plus.HabboHotel.Achievements.Models;
 
 namespace Plus.HabboHotel.Achievements
 {
@@ -16,16 +17,18 @@ namespace Plus.HabboHotel.Achievements
     {
         private static readonly ILog log = LogManager.GetLogger("Plus.HabboHotel.Achievements.AchievementManager");
 
-        public Dictionary<string, Achievement> Achievements;
+        private readonly AchievementDao _dao;
+
+        public Dictionary<string, Achievement> Achievements { get; private set; }
 
         public AchievementManager()
         {
-            Achievements = new Dictionary<string, Achievement>();
+            _dao = new AchievementDao();
         }
 
-        public void Init()
+        public async void Init()
         {
-            AchievementLevelFactory.GetAchievementLevels(out Achievements);
+            Achievements = await _dao.GetAchievementLevelsAsync();
         }
 
         public bool ProgressAchievement(GameClient session, string group, int progress, bool fromBeginning = false)

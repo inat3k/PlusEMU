@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Plus.HabboHotel.GameClients;
 using Plus.HabboHotel.Achievements;
+using Plus.HabboHotel.Achievements.Models;
 
 namespace Plus.Communication.Packets.Outgoing.GameCenter
 {

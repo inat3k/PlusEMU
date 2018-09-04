@@ -113,6 +113,8 @@ namespace Plus
                     SslMode = MySqlSslMode.None
                 };
 
+                ConnectionProvider.ConnectionString = connectionString.ToString();
+
                 _manager = new DatabaseManager(connectionString.ToString());
 
                 if (!_manager.IsConnected())
