@@ -5,7 +5,7 @@ using Plus.HabboHotel.GameClients;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 
 namespace Plus.HabboHotel.Cache
 {
@@ -14,12 +14,15 @@ namespace Plus.HabboHotel.Cache
         private static readonly ILog Log = LogManager.GetLogger("Plus.HabboHotel.Cache.CacheManager");
         private readonly ConcurrentDictionary<int, UserCache> _usersCached;
         private readonly ProcessComponent _process;
+        private readonly CacheDao _dao;
 
         public CacheManager()
         {
             _usersCached = new ConcurrentDictionary<int, UserCache>();
             _process = new ProcessComponent();
             _process.Init();
+
+            _dao = new CacheDao();
             Log.Info("Cache Manager -> LOADED");
         }
         public bool ContainsUser(int id)
@@ -43,6 +46,11 @@ namespace Plus.HabboHotel.Cache
                     _usersCached.TryAdd(id, user);
                     return user;
                 }
+            
+            /*
+             * TODO: Make this asynchronous!
+            user = await _dao.GetUserCache(id);
+            if (user != null) _usersCached.TryAdd(id, user);*/
 
             using (IQueryAdapter dbClient = PlusEnvironment.GetDatabaseManager().GetQueryReactor())
             {

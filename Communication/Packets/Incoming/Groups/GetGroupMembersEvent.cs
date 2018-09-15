@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Plus.HabboHotel.Groups;
 using Plus.Communication.Packets.Outgoing.Groups;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 using Plus.HabboHotel.GameClients;
 
 namespace Plus.Communication.Packets.Incoming.Groups

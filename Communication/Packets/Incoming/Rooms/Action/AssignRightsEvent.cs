@@ -4,7 +4,7 @@ using Plus.Communication.Packets.Outgoing.Rooms.Permissions;
 using Plus.Communication.Packets.Outgoing.Rooms.Settings;
 
 using Plus.Database.Interfaces;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 using Plus.HabboHotel.GameClients;
 
 namespace Plus.Communication.Packets.Incoming.Rooms.Action

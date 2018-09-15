@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Plus.HabboHotel.Rooms;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 
 namespace Plus.Communication.Packets.Outgoing.Rooms.Settings
 {

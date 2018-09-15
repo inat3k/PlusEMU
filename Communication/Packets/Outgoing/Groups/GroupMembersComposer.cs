@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Plus.HabboHotel.Groups;
-using Plus.HabboHotel.Cache.Type;
+using Plus.HabboHotel.Cache.Models;
 
 namespace Plus.Communication.Packets.Outgoing.Groups
 {

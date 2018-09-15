@@ -1,9 +1,6 @@
-﻿using System;
-using System.Data;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using log4net;
-using Plus.Database.Interfaces;
+using Plus.HabboHotel.Badges.Models;
 
 namespace Plus.HabboHotel.Badges
 {
@@ -11,29 +8,18 @@ namespace Plus.HabboHotel.Badges
     {
         private static readonly ILog Log = LogManager.GetLogger("Plus.HabboHotel.Badges.BadgeManager");
 
-        private readonly Dictionary<string, BadgeDefinition> _badges;
+        private readonly BadgeDao _dao;
+        private Dictionary<string, BadgeDefinition> _badges;
 
         public BadgeManager()
         {
             _badges = new Dictionary<string, BadgeDefinition>();
+            _dao = new BadgeDao();
         }
 
-        public void Init()
+        public async void Init()
         {
-            using (IQueryAdapter dbClient = PlusEnvironment.GetDatabaseManager().GetQueryReactor())
-            {
-                dbClient.SetQuery("SELECT * FROM `badge_definitions`;");
-                DataTable data = dbClient.GetTable();
-
-                foreach (DataRow row in data.Rows)
-                {
-                    string code = Convert.ToString(row["code"]).ToUpper();
-
-                    if (!_badges.ContainsKey(code))
-                        _badges.Add(code, new BadgeDefinition(code, Convert.ToString(row["required_right"])));
-                }
-            }
-
+            _badges = await _dao.GetBadges();
             Log.Info("Loaded " + _badges.Count + " badge definitions.");
         }
    

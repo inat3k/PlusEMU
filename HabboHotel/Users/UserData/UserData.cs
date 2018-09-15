@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
-using Plus.HabboHotel.Achievements;
+using Plus.HabboHotel.Achievements.Models;
 using Plus.HabboHotel.Users.Badges;
 using Plus.HabboHotel.Users.Messenger;
 using Plus.HabboHotel.Users.Relationships;

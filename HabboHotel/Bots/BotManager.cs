@@ -1,12 +1,9 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Data;
 using System.Collections.Generic;
-
 using log4net;
-using Plus.Database.Interfaces;
-using Plus.HabboHotel.Rooms.AI.Responses;
 using Plus.HabboHotel.Rooms.AI;
+using Plus.HabboHotel.Bots.Models;
 
 namespace Plus.HabboHotel.Bots
 {
@@ -14,31 +11,21 @@ namespace Plus.HabboHotel.Bots
     {
         private static readonly ILog Log = LogManager.GetLogger("Plus.HabboHotel.Bots.BotManager");
 
-        private readonly List<BotResponse> _responses;
+        private readonly BotDao _dao;
+        private List<BotResponse> _responses;
 
         public BotManager()
         {
+            _dao = new BotDao();
             _responses = new List<BotResponse>();
         }
 
-        public void Init()
+        public async void Init()
         {
             if (_responses.Count > 0)
                 _responses.Clear();
 
-            using (IQueryAdapter dbClient = PlusEnvironment.GetDatabaseManager().GetQueryReactor())
-            {
-                dbClient.SetQuery("SELECT `bot_ai`,`chat_keywords`,`response_text`,`response_mode`,`response_beverage` FROM `bots_responses`");
-                DataTable data = dbClient.GetTable();
-
-                if (data != null)
-                {
-                    foreach (DataRow row in data.Rows)
-                    {
-                        _responses.Add(new BotResponse(Convert.ToString(row["bot_ai"]), Convert.ToString(row["chat_keywords"]), Convert.ToString(row["response_text"]), row["response_mode"].ToString(), Convert.ToString(row["response_beverage"])));
-                    }
-                }
-            }
+            _responses = await _dao.GetResponses();
         }
 
         public BotResponse GetResponse(BotAIType type, string message)

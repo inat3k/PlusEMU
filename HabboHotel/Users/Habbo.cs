@@ -7,7 +7,6 @@ using Plus.Core;
 using Plus.HabboHotel.Rooms;
 using Plus.HabboHotel.Groups;
 using Plus.HabboHotel.GameClients;
-using Plus.HabboHotel.Achievements;
 using Plus.HabboHotel.Users.Badges;
 using Plus.HabboHotel.Users.Inventory;
 using Plus.HabboHotel.Users.Messenger;
@@ -29,6 +28,7 @@ using Plus.HabboHotel.Rooms.Chat.Commands;
 using Plus.HabboHotel.Users.Permissions;
 using Plus.HabboHotel.Subscriptions;
 using Plus.HabboHotel.Users.Ignores;
+using Plus.HabboHotel.Achievements.Models;
 
 namespace Plus.HabboHotel.Users
 {
